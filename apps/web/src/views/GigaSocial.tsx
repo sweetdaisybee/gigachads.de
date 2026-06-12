@@ -42,7 +42,7 @@ const gigaSocials: gigaSocial[] = [
     uuid: "01f47959-a2c7-4ef5-8ac7-1d60707859a4",
     type: "GitHub",
     text: "Open-Source Code",
-    destination: "https://github.com/gigachads-de/gigachads.de",
+    destination: "https://github.com/sweetdaisybee/gigachads.de",
     image: imgGitHub,
     imageAlt: "github"
   }
