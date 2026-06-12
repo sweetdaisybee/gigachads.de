@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/Roboto-Bold.ttf"), format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html, body, #root, #root>div {
+  color: black;
+  background: linear-gradient(180deg, rgba(116,114,114,1) 0%, rgba(151,150,153,1) 17%, rgba(165,164,164,1) 85%, rgba(189,182,182,1) 100%);
+  font-family: "Roboto";
+}

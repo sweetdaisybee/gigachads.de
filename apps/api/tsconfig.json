@@ -1,0 +1,24 @@
+{
+  "extends": "@gigachads.de/typescript/node.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "rootDir": "src",
+    "paths": {
+      "@index": ["./src/index.js"],
+      "@configs/*": ["./src/configs/*"],
+      "@controllersV1/*": ["./src/controllers/v1/*"],
+      "@factoriesV1/*": ["./src/factories/v1/*"],
+      "@middlewaresV1/*": ["./src/middlewares/v1/*"],
+      "@modelsV1/*": ["./src/models/v1/*"],
+      "@modulesV1/*": ["./src/modules/v1/*"],
+      "@repositoriesV1/*": ["./src/repositories/v1/*"],
+      "@routesV1/*": ["./src/routes/v1/*"],
+      "@schemasV1/*": ["./src/schemas/v1/*"],
+      "@typesV1/*": ["./src/types/v1/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", ".turbo", ".tsbuildinfo", "**/*.test*"]
+}

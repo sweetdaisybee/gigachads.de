@@ -1,0 +1,18 @@
+{
+  "extends": "@gigachads.de/typescript/react.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "rootDir": "src",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@views/*": ["./src/views/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@servicesV1/*": ["./src/services/v1/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", ".turbo", ".tsbuildinfo", "**/*.test*"]
+}

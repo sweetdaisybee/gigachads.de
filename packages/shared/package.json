@@ -1,0 +1,62 @@
+{
+  "name": "@gigachads.de/shared",
+  "version": "1.0.0",
+  "license": "Unlicense",
+  "author": {
+    "name": "sweetdaisybee",
+    "url": "https://github.com/sweetdaisybee"
+  },
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "type": "module",
+  "homepage": "https://github.com/sweetdaisybee/gigachads.de",
+  "bugs": {
+    "url": "https://github.com/sweetdaisybee/gigachads.de/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigachads-de/gigachads.de.git",
+    "directory": "packages/shared"
+  },
+  "engines": {
+    "node": ">=26.0.0 <27.0.0",
+    "pnpm": ">=11.0.0 <12.0.0"
+  },
+  "os": [
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    "./schemas/v1": {
+      "types": "./dist/schemas/v1/index.d.ts",
+      "default": "./dist/schemas/v1/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "default": "./dist/utils/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsc && (concurrently \"tsc --watch\" \"tsc-alias --watch\")",
+    "build": "tsc --build && tsc-alias -p tsconfig.json",
+    "clean": "rimraf dist .tsbuildinfo .turbo node_modules",
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@gigachads.de/jest": "workspace:*",
+    "@gigachads.de/prisma": "workspace:*",
+    "@gigachads.de/typescript": "workspace:*",
+    "concurrently": "^9.2.1",
+    "tsc-alias": "^1.8.17"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}

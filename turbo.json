@@ -1,0 +1,45 @@
+{
+  "dangerouslyDisablePackageManagerCheck": false,
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "dependsOn": ["^db:generate", "^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "typecheck": {
+      "cache": false
+    },
+    "db:push": {
+      "interactive": true,
+      "cache": false
+    },
+    "db:deploy": {
+      "cache": false
+    },
+    "db:migrate": {
+      "interactive": true,
+      "cache": false
+    },
+    "db:generate": {
+      "dependsOn": ["^db:generate"],
+      "cache": false
+    },
+    "db:format": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+.tsbuildinfo
+.turbo
+dist
+build
+.env
+generated
+gigachads.db

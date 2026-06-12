@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model giga_user {
+  id        Int            @id @default(autoincrement())
+  uuid      String         @unique @default(uuid())
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  name      String         @unique
+  email     String         @unique
+  password  giga_password?
+}
+
+model giga_password {
+  id        Int       @id @default(autoincrement())
+  uuid      String    @unique @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  hash      String
+  userId    Int       @unique
+  user      giga_user @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model giga_team {
+  id         Int              @id @default(autoincrement())
+  uuid       String           @unique @default(uuid())
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  quattId    Int              @unique
+  name       String
+  placements giga_placement[]
+}
+
+model giga_year {
+  id         Int              @id @default(autoincrement())
+  uuid       String           @unique @default(uuid())
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  name       Int              @unique
+  placements giga_placement[]
+}
+
+model giga_placement {
+  id        Int       @id @default(autoincrement())
+  uuid      String    @unique @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  rank      Int
+  teamId    Int
+  team      giga_team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  yearId    Int
+  year      giga_year @relation(fields: [yearId], references: [id])
+
+  @@unique([rank, teamId, yearId])
+}
+
+model giga_sponsor {
+  id        Int      @id @default(autoincrement())
+  uuid      String   @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  emoji     String
+  uri       String
+  past      Boolean  @default(false)
+}

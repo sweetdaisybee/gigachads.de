@@ -1,0 +1,14 @@
+packages:
+  - apps/*
+  - packages/*
+minimumReleaseAge: 20160
+minimumReleaseAgeExclude:
+  - "@gigachads.de/*"
+minimumReleaseAgeStrict: true
+allowBuilds:
+  '@prisma/engines': true
+  argon2: true
+  better-sqlite3: true
+  esbuild: true
+  prisma: true
+  unrs-resolver: true
