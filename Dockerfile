@@ -7,6 +7,7 @@ COPY . .
 RUN pnpm turbo prune @gigachads.de/api @gigachads.de/web --docker
 
 FROM base AS builder
+ENV DATABASE_URL=file:/app/gigachads.db
 RUN npm install -g turbo pnpm
 WORKDIR /app
 COPY --from=pruner /app/out/full/ /app
