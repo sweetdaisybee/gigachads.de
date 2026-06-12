@@ -4,7 +4,7 @@
 
     git clone https://github.com/gigachads-de/gigachads.de.git
     cd gigachads.de
-    docker build -t gigachads:1.0.0 .
+    docker build --build-arg DATABASE_URL=file:/app/gigachads.db -t gigachads:1.0.0 .
 
 ## .env Variables
 
