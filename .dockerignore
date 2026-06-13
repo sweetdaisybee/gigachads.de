@@ -1,3 +1,4 @@
+.git
 node_modules
 .tsbuildinfo
 .turbo
@@ -5,4 +6,7 @@ dist
 build
 .env
 generated
-gigachads.db
+/data
+docker-compose.yml
+Dockerfile
+.md

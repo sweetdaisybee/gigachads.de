@@ -4,6 +4,7 @@ packages:
 minimumReleaseAge: 20160
 minimumReleaseAgeExclude:
   - "@gigachads.de/*"
+updateNotifier: false
 minimumReleaseAgeStrict: true
 allowBuilds:
   '@prisma/engines': true

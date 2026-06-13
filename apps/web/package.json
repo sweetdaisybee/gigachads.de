@@ -1,13 +1,13 @@
 {
   "name": "@gigachads.de/web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Unlicense",
   "author": {
     "name": "sweetdaisybee",
     "url": "https://github.com/sweetdaisybee"
   },
   "private": true,
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@11.4.0",
   "type": "module",
   "homepage": "https://github.com/sweetdaisybee/gigachads.de",
   "bugs": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gigachads-de/gigachads.de.git",
+    "url": "git+https://github.com/sweetdaisybee/gigachads.de.git",
     "directory": "apps/web"
   },
   "engines": {

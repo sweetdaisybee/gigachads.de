@@ -222,6 +222,9 @@ importers:
       better-sqlite3:
         specifier: ^12.8.0
         version: 12.10.0
+      prisma:
+        specifier: ^7.5.0
+        version: 7.8.0(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(better-sqlite3@12.10.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
       zod:
         specifier: ^4.3.6
         version: 4.4.3
@@ -232,9 +235,6 @@ importers:
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
-      prisma:
-        specifier: ^7.5.0
-        version: 7.8.0(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(better-sqlite3@12.10.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
       tsc-alias:
         specifier: ^1.8.17
         version: 1.8.17
