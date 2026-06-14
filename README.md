@@ -1,10 +1,7 @@
 # gigachads.de
 
-## Installation
-
-    git clone https://github.com/gigachads-de/gigachads.de.git
-    cd gigachads.de
-    docker build -t gigachads:1.0.1 .
+## Installation  
+    docker pull daisybee/gigachads.de:latest
 
 ## .env Variables
 
@@ -16,7 +13,7 @@
     dev | prod
 ### FASTIFY_HOST | string
     Default: ::
-    Examples: 127.0.0.1 | 0.0.0.0 | :: // Somehow this doesn't work :(
+    Examples: 127.0.0.1 | 0.0.0.0 | ::
 ### FASTIFY_PORT | string
     Default: 3000
     Examples: 3000 | 5000
@@ -41,7 +38,7 @@
 ### JWT_SECRET  | string
     Default: none
     Examples: supersecurepassword
-### REDIS_ENABLED
+### REDIS_ENABLED | boolean
     Default: true
     Example: true | false
 ### REDIS_HOST | string
