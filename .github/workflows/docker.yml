@@ -5,6 +5,9 @@ on:
     tags:
       - v*
   workflow_dispatch:
+    inputs:
+      tag:
+        required: true
 
 jobs:
   build:
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: "Checkout repository"
         uses: "actions/checkout@v6"
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: "Extract Docker image metadata"
         id: "meta"
@@ -19,7 +24,7 @@ jobs:
         with:
           images: "${{ secrets.DOCKER_USERNAME }}/gigachads.de"
           tags: |
-            type=semver,pattern=v{{version}}
+            type=semver,pattern=v{{version}},value=${{ inputs.tag || github.ref_name }}
 
       - name: "Log in to Docker Hub"
         uses: "docker/login-action@v4"
