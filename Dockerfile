@@ -52,7 +52,8 @@ COPY --chown=gigachads:gigachads --from=builder /app/packages/prisma/dist /app/p
 COPY --chown=gigachads:gigachads --from=builder /app/packages/prisma/prisma /app/packages/prisma/prisma
 COPY --chown=gigachads:gigachads --from=builder /app/packages/prisma/prisma.config.js /app/packages/prisma/prisma.config.js
 COPY --chown=gigachads:gigachads --from=builder /app/data/gigachads.db /app/data/gigachads.db
-COPY --chown=gigachads:gigachads entrypoint.sh /entrypoint.sh 
+COPY --chown=gigachads:gigachads entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 USER gigachads
 VOLUME /app/data
 ENTRYPOINT ["/entrypoint.sh"]
